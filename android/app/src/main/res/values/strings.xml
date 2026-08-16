@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">AKV Energy</string>
+    <string name="title_activity_main">AKV Energy</string>
+    <string name="package_name">com.akvenergy.solar</string>
+    <string name="custom_url_scheme">com.akvenergy.solar</string>
+</resources>

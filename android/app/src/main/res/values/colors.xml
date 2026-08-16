@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Match the app's dark background so there's no color flash on launch -->
+    <color name="colorPrimary">#070d19</color>
+    <color name="colorPrimaryDark">#070d19</color>
+    <color name="colorAccent">#10b981</color>
+</resources>
