@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { App } from '@capacitor/app';
 import { Share } from '@capacitor/share';
+import { APP_CONFIG } from '../config';
 
 interface CapacitorHooksProps {
   onBackPress?: () => boolean; // return true if handled, false to exit
@@ -52,7 +53,7 @@ export function useCapacitor({ onBackPress }: CapacitorHooksProps = {}) {
       await Share.share({
         title: 'AKV Energy — Solar Solutions',
         text: 'Save up to 80% on your electricity bills with smart, premium solar installations from AKV Energy!',
-        url: 'https://akvenergy.com/',
+        url: APP_CONFIG.appUrl,
         dialogTitle: 'Share AKV Energy App',
       });
     } catch (e) {
@@ -60,10 +61,10 @@ export function useCapacitor({ onBackPress }: CapacitorHooksProps = {}) {
         navigator.share({
           title: 'AKV Energy — Solar Solutions',
           text: 'Save on electricity with AKV Energy solar solutions!',
-          url: 'https://akvenergy.com/',
+          url: APP_CONFIG.appUrl,
         }).catch(err => console.log('Share error:', err));
       } else {
-        navigator.clipboard.writeText('Check out AKV Energy: https://akvenergy.com/').catch(() => {});
+        navigator.clipboard.writeText(`Check out AKV Energy: ${APP_CONFIG.appUrl}`).catch(() => {});
       }
     }
   };

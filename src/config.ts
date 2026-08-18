@@ -40,7 +40,8 @@ export const APP_CONFIG = {
   },
 
   // ─── Contact & Brand ─────────────────────────────────────────────────────
-  websiteUrl: 'https://akvenergy.com/',
+  appUrl: 'https://akvenergyapp.netlify.app',
+  websiteUrl: 'https://akvenergyapp.netlify.app',
   supportPhone: '+91 95376 61151',
   supportEmail: 'info@akvenergy.com',
   whatsappNumber: '919537661151',
