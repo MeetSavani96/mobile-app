@@ -12,7 +12,7 @@ export const APP_CONFIG = {
     if (Capacitor.isNativePlatform()) {
       return (
         import.meta.env.VITE_ANDROID_API_URL ||
-        'http://10.0.2.2:8888/mobile-app/php/api.php'
+        'https://akvenergy.lovestoblog.com/mobile-app/php/api.php'
       );
     }
 
@@ -32,7 +32,7 @@ export const APP_CONFIG = {
     }
 
     // 4. Production fallback
-    return 'https://akvenergy.com/mobile-app/php/api.php';
+    return 'https://akvenergy.lovestoblog.com/mobile-app/php/api.php';
   })(),
 
   get apiBase(): string {
