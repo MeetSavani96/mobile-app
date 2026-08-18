@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { 
+import {
   ArrowLeft, Plus, CheckCircle2, AlertCircle, X, FileText, DollarSign
 } from 'lucide-react';
 import { apiFetch } from '../utils/api';
@@ -260,16 +260,16 @@ export const AdminInvoicesView: React.FC<AdminInvoicesProps> = ({ onBack }) => {
       {screen === 'list' && (
         <>
           <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '8px', marginBottom: '16px' }}>
-            <input 
-              type="search" 
-              className="form-input" 
-              placeholder="Search invoice number..." 
+            <input
+              type="search"
+              className="form-input"
+              placeholder="Search invoice number..."
               value={search}
               onChange={e => setSearch(e.target.value)}
               style={{ fontSize: '13px', height: '36px' }}
             />
-            <select 
-              className="form-input" 
+            <select
+              className="form-input"
               value={statusFilter}
               onChange={e => setStatusFilter(e.target.value)}
               style={{ fontSize: '12px', height: '36px' }}
@@ -306,7 +306,7 @@ export const AdminInvoicesView: React.FC<AdminInvoicesProps> = ({ onBack }) => {
                     <span>Total Amount: <span style={{ color: '#fff', fontWeight: 600 }}>${Number(inv.grand_total).toLocaleString()}</span></span>
                     <span>Paid: <span style={{ color: 'var(--color-green)', fontWeight: 600 }}>${Number(inv.paid_amount).toLocaleString()}</span></span>
                   </div>
-                  
+
                   <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px', borderTop: '1px solid rgba(255,255,255,0.04)', paddingTop: '8px', marginTop: '10px' }}>
                     <button onClick={() => viewDetails(inv.id)} className="btn btn-secondary" style={{ padding: '4px 8px', fontSize: '10px' }}>View Details</button>
                   </div>
@@ -326,7 +326,7 @@ export const AdminInvoicesView: React.FC<AdminInvoicesProps> = ({ onBack }) => {
       {screen === 'form' && (
         <form onSubmit={handleGenerateInvoice} className="glass-card" style={{ padding: '16px' }}>
           <h3 style={{ fontSize: '16px', color: '#fff', marginBottom: '16px' }}>Generate Invoice from Proposal</h3>
-          
+
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             <div>
               <label style={{ fontSize: '11px', color: 'var(--text-muted)', textTransform: 'uppercase', display: 'block', marginBottom: '4px' }}>Select Accepted Proposal *</label>
@@ -433,12 +433,12 @@ export const AdminInvoicesView: React.FC<AdminInvoicesProps> = ({ onBack }) => {
 
                   <div>
                     <label style={{ fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', display: 'block', marginBottom: '4px' }}>Amount to Record ($) *</label>
-                    <input 
-                      type="number" 
-                      className="form-input" 
-                      value={payAmount || ''} 
-                      onChange={e => setPayAmount(Number(e.target.value))} 
-                      required 
+                    <input
+                      type="number"
+                      className="form-input"
+                      value={payAmount || ''}
+                      onChange={e => setPayAmount(Number(e.target.value))}
+                      required
                       style={{ fontSize: '12px' }}
                       max={Number(selectedInvoice.grand_total) - Number(selectedInvoice.paid_amount)}
                     />
@@ -657,7 +657,7 @@ export const AdminInvoicesView: React.FC<AdminInvoicesProps> = ({ onBack }) => {
       {/* ── TOAST NOTIFICATION ────────────────────────────────────────────── */}
       {toast && (
         <div style={{
-          position: 'fixed', bottom: '80px', left: '20px', right: '20px', 
+          position: 'fixed', bottom: '80px', left: '20px', right: '20px',
           background: toast.type === 'success' ? 'rgba(16, 185, 129, 0.95)' : 'rgba(239, 68, 68, 0.95)',
           color: '#fff', padding: '12px 16px', borderRadius: '12px', zIndex: 10000,
           boxShadow: '0 10px 25px rgba(0,0,0,0.3)', backdropFilter: 'blur(8px)',
